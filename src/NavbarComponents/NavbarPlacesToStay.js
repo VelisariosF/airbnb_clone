@@ -1,4 +1,5 @@
 import React from 'react'
+import Guests from './Guests'
 import './NavbarPlacesToStay.css'
 export default function NavbarPlacesToStay() {
     const [formData, setFormData] = React.useState({
@@ -41,24 +42,7 @@ export default function NavbarPlacesToStay() {
                 placeholder='Add dates'
                 value={formData.checkOut}
                 onChange={handleChange} />
-
-<label htmlFor="guets">Guests</label>
-            <br />
-            <select 
-                id="favColor" 
-                placeholder='Add guests'
-                value={formData.guests}
-                onChange={handleChange}
-                name="guests"
-            >
-                <option value="red">Red</option>
-                <option value="orange">Orange</option>
-                <option value="yellow">Yellow</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="indigo">Indigo</option>
-                <option value="violet">Violet</option>
-            </select>
+               <Guests/>
 
         </form>
     )
