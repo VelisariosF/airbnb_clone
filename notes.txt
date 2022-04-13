@@ -1,0 +1,3 @@
+This file contains the bugs needed to be fixed
+==============================================
+1) Fix the counters of each guest to not go below 0
