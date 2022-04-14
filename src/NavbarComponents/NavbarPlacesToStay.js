@@ -1,12 +1,15 @@
 import React from 'react'
 import GuestCounter from './GuestsFromExperiences/GuestCounter'
 import './NavbarPlacesToStay.css'
+import '../Navbar.css'
 export default function NavbarPlacesToStay(props) {
     const formDisplayStyle ={
         opacity: props.show ? 1 : 0
-     }
+    }
+
     const [guestsCounters, setGuestsCounters] = React.useState(() => [0, 0, 0, 0])
     const [guestsSum, setGuestsSum] = React.useState(() => 0)
+
     const [formData, setFormData] = React.useState({
         location: "",
         checkIn: "",
@@ -14,7 +17,18 @@ export default function NavbarPlacesToStay(props) {
         guests: 0
     })
 
-    const [showGuestsContainer, setShowGuestContainer] = React.useState(true)
+    const [displayGuestsContainer, setDisplayGuestsContainer] = React.useState(false)
+     
+    function handleDisplayGuestsContainer(){
+        setDisplayGuestsContainer(prevState => !prevState)
+    }
+  
+
+    const guest_counter_container_style = {
+        opacity: displayGuestsContainer ? 1 : 0
+    
+    }
+
 
     const guest_counter_elements = guestsCounters.map((value, index) => {
         return (
@@ -24,13 +38,8 @@ export default function NavbarPlacesToStay(props) {
                 subtract={() => subtract(index)} />
         )
     })
-
-    const guest_counter_container_style = {
-        opacity: showGuestsContainer ? 1 : 0
-    }
-
-
-
+    
+     
     function updateGuestsSum(add) {
         setFormData(prevFormData => {
             let newFormData = { ...prevFormData }
@@ -85,12 +94,14 @@ export default function NavbarPlacesToStay(props) {
                 [name]: value
             }
         })
+
+        
     }
     return (
         <div>
             <h3>Places to stay</h3>
-            <div style={formDisplayStyle} className='places-to-stay-form'>
-                <form onSubmit={handelSubmit}>
+         
+                <form onSubmit={handelSubmit} style={formDisplayStyle} className='places-to-stay-form'>
                     <div className='form-element'>
                         <label htmlFor='location'>location</label>
                         <input
@@ -121,21 +132,26 @@ export default function NavbarPlacesToStay(props) {
                     </div>
 
                     <div className='form-element'>
-                        <label htmlFor='guests'>Guests</label>
+                        <label htmlFor='guests' onClick={handleDisplayGuestsContainer}>Guests</label>
                         <input
-                            type='textarea'
+                            type='number'
                             name='guests'
                             placeholder={formData.guests === 0 ? "Add guests" : formData.guests}
                             value={formData.guests}
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            />
                     </div>
 
-                    <button className='search-button' placeholder='Search'><i class="fa fa-search"><span>Search</span></i></button>
+                    <button className='search-button' placeholder='Search'><i className="fa fa-search"><span>Search</span></i></button>
                 </form>
-                <div className='counters-container' style={guest_counter_container_style} >
+               
+            
+            <div className='counters-container'  style={guest_counter_container_style} >
+                    
                     {guest_counter_elements}
-                </div>
-            </div>
+           
+             
+          </div>
         </div>
 
 

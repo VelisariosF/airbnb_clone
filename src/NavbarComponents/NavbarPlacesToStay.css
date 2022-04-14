@@ -1,0 +1,30 @@
+.places-to-stay-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    height: 4.5em;
+    width: 52em;
+    padding: 2%;
+}
+
+.places-to-stay-form > .form-element{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-right: 0.8px solid rgb(197, 197, 197);
+   height: 70%;
+   width: 70%;
+   
+
+}
+
+.places-to-stay-form > .form-element > input[type=text], input[type=date] , input[type=number] {
+  border: none;
+ 
+}
+

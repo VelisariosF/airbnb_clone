@@ -1,0 +1,33 @@
+.profile-moderator-ul{
+   
+
+    
+}
+
+.profile-moderator-ul > .profile-moderator-credentials{
+    color: black;
+    list-style: none;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 5em;
+    
+
+}
+
+.profile-moderator-ul > .profile-moderator-rest{
+    border-top: 0.5px solid rgb(168, 168, 168);
+    color: black;
+    list-style: none;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 8em;
+}
+
