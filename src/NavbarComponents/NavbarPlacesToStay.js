@@ -8,14 +8,27 @@ export default function NavbarPlacesToStay(props) {
     }
 
     const [guestsCounters, setGuestsCounters] = React.useState(() => [0, 0, 0, 0])
-    const [guestsSum, setGuestsSum] = React.useState(() => 0)
-
+   // const [guestsSum, setGuestsSum] = React.useState(() => 0)
+     
     const [formData, setFormData] = React.useState({
         location: "",
         checkIn: "",
         checkOut: "",
         guests: 0
     })
+
+
+    const [formElementClicked, setFormElementClicked] = React.useState(false)
+
+
+   /* const formSubmitButtonStyle = {
+        if(formElementClicked){
+            return {
+                width: '6em',
+                borderRadius: '20%',
+            }
+        }    
+    }*/
 
     const [displayGuestsContainer, setDisplayGuestsContainer] = React.useState(false)
      
@@ -95,6 +108,8 @@ export default function NavbarPlacesToStay(props) {
             }
         })
 
+        setFormElementClicked(true)
+
         
     }
     return (
@@ -103,7 +118,7 @@ export default function NavbarPlacesToStay(props) {
          
                 <form onSubmit={handelSubmit} style={formDisplayStyle} className='places-to-stay-form'>
                     <div className='form-element'>
-                        <label htmlFor='location'>location</label>
+                        <label htmlFor='location'>Location</label>
                         <input
                             type='text'
                             name='location'
@@ -112,6 +127,7 @@ export default function NavbarPlacesToStay(props) {
                             onChange={handleChange} />
 
                     </div>
+                    <div className='separator-line'></div>
                     <div className='form-element'>
                         <label htmlFor='checkIn'>Check in</label>
                         <input
@@ -121,6 +137,7 @@ export default function NavbarPlacesToStay(props) {
                             value={formData.checkIn}
                             onChange={handleChange} />
                     </div>
+                    <div className='separator-line'>  </div> 
                     <div className='form-element'>
                         <label htmlFor='checkOut'>Check out</label>
                         <input
@@ -130,20 +147,22 @@ export default function NavbarPlacesToStay(props) {
                             value={formData.checkOut}
                             onChange={handleChange} />
                     </div>
-
-                    <div className='form-element'>
-                        <label htmlFor='guests' onClick={handleDisplayGuestsContainer}>Guests</label>
-                        <input
-                            type='number'
+                    <div className='separator-line'></div>
+                    <div className='form-element grid'>
+                        <label className='label-grid-element' htmlFor='guests' onClick={handleDisplayGuestsContainer}>Guests</label>
+                        <input 
+                            type='text'
                             name='guests'
+                            className='input-grid-element'
                             placeholder={formData.guests === 0 ? "Add guests" : formData.guests}
                             value={formData.guests}
                             onChange={handleChange}
                             />
+                            <button className='search-button'  placeholder='Search'><i className="fa fa-search"><span>Search</span></i></button>
+            
                     </div>
 
-                    <button className='search-button' placeholder='Search'><i className="fa fa-search"><span>Search</span></i></button>
-                </form>
+                       </form>
                
             
             <div className='counters-container'  style={guest_counter_container_style} >

@@ -1,30 +1,110 @@
-.places-to-stay-form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 30px;
-    background-color: white;
-    color: black;
-    height: 4.5em;
-    width: 52em;
-    padding: 2%;
-}
-
-.places-to-stay-form > .form-element{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    border-right: 0.8px solid rgb(197, 197, 197);
-   height: 70%;
-   width: 70%;
-   
-
-}
-
-.places-to-stay-form > .form-element > input[type=text], input[type=date] , input[type=number] {
+.places-to-stay-form {
   border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 40px;
+  background-color: white;
+  color: black;
+  height: 3.5em;
+  width: 52em;
  
 }
 
+.places-to-stay-form>.form-element {
+ /* border: 2px solid red;*/
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  /*border-right: 0.8px solid rgb(197, 197, 197);*/
+  -webkit-transition: background-color 0.2s ease-out;
+  height: 100%;
+  
+  padding-left: 2%;
+  font-size: 400;
+
+}
+
+.places-to-stay-form> .grid{
+  border-radius: 40px;
+  grid-template-areas: "label button"
+                       "input button";
+  align-items: start;
+  justify-content: space-between;
+
+}
+
+.places-to-stay-form> .grid> .input-grid-element{
+  grid-area: "input";
+}
+
+.places-to-stay-form> .grid >.label-grid-element{
+ grid-area: "label";
+}
+
+.separator-line{
+ border: 0.5px solid rgb(197, 197, 197);
+ height: 60%;
+ width: 0%;
+}
+
+.places-to-stay-form>.form-element:hover{
+  background-color: rgb(194, 194, 194);
+}
+
+.places-to-stay-form>.form-element> label {
+   font-size: small;
+   font-style: normal;
+   font-weight: 500;
+}
+
+
+
+.places-to-stay-form>.form-element>input[type=text],
+input[type=date],
+input[type=number] {
+  border: none;
+  background-color: transparent;
+  font-size: small;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.places-to-stay-form> .grid> .search-button {
+  grid-area: "button";
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 5em;
+  height: 100%;
+ 
+  width: auto;
+  /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+  -webkit-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+  background-color: #FF5A5F;
+  color: white;
+  border: none;
+
+}
+
+.places-to-stay-form>.search-button:hover {
+  width: 300px;
+}
+
+
+
+.places-to-stay-form>.search-button>i {
+  font-size: 1.5em;
+  display: inline;
+
+}
+
+.places-to-stay-form>.search-button>i>span {
+  opacity: 0;
+}
