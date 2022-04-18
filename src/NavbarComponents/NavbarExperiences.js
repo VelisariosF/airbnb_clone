@@ -2,14 +2,14 @@ import React from 'react'
 import './NavbarExperiences.css'
 import '../Navbar.css'
 export default function NavbarExperiences(props) {
-  const formDisplayStyle ={
-     opacity: props.show ? 1 : 0
+  const formDisplayStyle = {
+    opacity: props.show ? 1 : 0
   }
   const [formData, setFormData] = React.useState({
     location: '',
     date: ''
-  })  
-      
+  })
+
   function handleChange(event) {
     const { name, value } = event.target
     setFormData(prevFormData => {

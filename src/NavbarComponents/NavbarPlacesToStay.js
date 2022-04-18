@@ -112,6 +112,14 @@ export default function NavbarPlacesToStay(props) {
 
         
     }
+    /*
+         <label  htmlFor='guests' onClick={handleDisplayGuestsContainer}>Guests</label>
+    <input 
+    type='text'
+    name='guests'
+    value={formData.guests}
+    onChange={handleChange}
+    />*/
     return (
         <div>
             <h3>Places to stay</h3>
@@ -148,16 +156,14 @@ export default function NavbarPlacesToStay(props) {
                             onChange={handleChange} />
                     </div>
                     <div className='separator-line'></div>
-                    <div className='form-element grid'>
-                        <label className='label-grid-element' htmlFor='guests' onClick={handleDisplayGuestsContainer}>Guests</label>
-                        <input 
-                            type='text'
-                            name='guests'
-                            className='input-grid-element'
-                            placeholder={formData.guests === 0 ? "Add guests" : formData.guests}
-                            value={formData.guests}
-                            onChange={handleChange}
-                            />
+                    <div className='form-flex-element'>
+                        <div className='form-element-guests'>
+                        <p className='label' onClick={handleDisplayGuestsContainer}>Guests</p>
+                        <p className='data'>{formData.guests === 0 ? "Add guests" : formData.guests}</p>
+                     
+                        </div>
+                       
+                     
                             <button className='search-button'  placeholder='Search'><i className="fa fa-search"><span>Search</span></i></button>
             
                     </div>

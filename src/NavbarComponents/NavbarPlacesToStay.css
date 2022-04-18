@@ -9,11 +9,11 @@
   color: black;
   height: 3.5em;
   width: 52em;
- 
+  
 }
 
 .places-to-stay-form>.form-element {
- /* border: 2px solid red;*/
+  border: 2px solid red;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -21,29 +21,72 @@
   justify-content: space-around;
   /*border-right: 0.8px solid rgb(197, 197, 197);*/
   -webkit-transition: background-color 0.2s ease-out;
-  height: 100%;
-  
-  padding-left: 2%;
+  height: auto;
+  width: auto;
+
+  padding: 1.5%;
   font-size: 400;
 
 }
 
-.places-to-stay-form> .grid{
+.places-to-stay-form> .form-flex-element{
+  border: 2px solid red;
+ /* border: 2px solid red;*/
+ border-radius: 40px;
+ display: flex;
+ flex-direction: row;
+ align-items: flex-start;
+ justify-content: space-around;
+ /*border-right: 0.8px solid rgb(197, 197, 197);*/
+ -webkit-transition: background-color 0.2s ease-out;
+ height: 100%;
+ width: 30%;
+ 
+ font-size: 400;
+
+
+}
+
+
+.places-to-stay-form > .form-flex-element > .form-element-guests{
+  border:  2px solid red;
   border-radius: 40px;
-  grid-template-areas: "label button"
-                       "input button";
-  align-items: start;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
+  justify-content: space-around;
+  /*border-right: 0.8px solid rgb(197, 197, 197);*/
+  -webkit-transition: background-color 0.2s ease-out;
+  height: 100%;
+  width: 70%;
+  padding-left: 5%;
+  font-size: 400;
+ 
 }
 
-.places-to-stay-form> .grid> .input-grid-element{
-  grid-area: "input";
+.label{
+  border: 2px solid  purple;
+  font-size: small;
+   font-style: normal;
+   font-weight: 500;
+   color: red;
+
+
+
+}
+.data{
+  border: 2px solid green;
+  color: red;
+  
+  background-color: transparent;
+  font-size: small;
+  font-style: normal;
+  font-weight: 300;
 }
 
-.places-to-stay-form> .grid >.label-grid-element{
- grid-area: "label";
-}
+
+
 
 .separator-line{
  border: 0.5px solid rgb(197, 197, 197);
@@ -55,15 +98,18 @@
   background-color: rgb(194, 194, 194);
 }
 
+.places-to-stay-form>.form-flex-element:hover{
+  background-color: rgb(194, 194, 194);
+}
+
 .places-to-stay-form>.form-element> label {
    font-size: small;
    font-style: normal;
    font-weight: 500;
 }
-
-
-
-.places-to-stay-form>.form-element>input[type=text],
+   
+   
+input[type=text],
 input[type=date],
 input[type=number] {
   border: none;
@@ -73,38 +119,35 @@ input[type=number] {
   font-weight: 300;
 }
 
-.places-to-stay-form> .grid> .search-button {
-  grid-area: "button";
+.places-to-stay-form> .form-flex-element> .search-button {
+
   border-radius: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 5em;
-  height: 100%;
- 
-  width: auto;
-  /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
-  -webkit-transition: max-width 0.5s;
-  transition: max-width 0.5s;
+
+  height: 70%;
+  width: 35%;
   background-color: #FF5A5F;
   color: white;
   border: none;
+  cursor: pointer;
 
 }
-
-.places-to-stay-form>.search-button:hover {
+   
+.places-to-stay-form>.form-flex-element>.search-button:hover {
   width: 300px;
 }
 
 
 
-.places-to-stay-form>.search-button>i {
+.places-to-stay-form>.form-flex-element>.search-button>i {
   font-size: 1.5em;
   display: inline;
 
 }
 
-.places-to-stay-form>.search-button>i>span {
+.places-to-stay-form>.form-flex-element>.search-button>i>span {
   opacity: 0;
 }
