@@ -1,0 +1,49 @@
+.counter-element{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 4.5%;
+
+    border-bottom: 0.5px solid rgb(197, 197, 197);
+ 
+    
+}
+
+.description-container{
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: auto;
+    font-size: small;
+    height: 100%;
+}
+
+.counter{
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    font-size: medium;
+    justify-content: space-between;
+
+}
+
+
+.counter > button{
+    display: block;
+    cursor: pointer;
+    font-size: large;
+    background-color: white;
+    border-radius: 50%;
+    border: 0.5px solid rgb(187, 187, 187);
+
+}
+
+.counter > button > i{
+    font-size: smaller;
+    font-weight: 100;
+}

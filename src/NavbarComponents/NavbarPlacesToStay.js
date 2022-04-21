@@ -123,8 +123,8 @@ export default function NavbarPlacesToStay(props) {
     return (
         <div>
             <h3>Places to stay</h3>
-         
-                <form onSubmit={handelSubmit} style={formDisplayStyle} className='places-to-stay-form'>
+                <div className='pl_form'style={formDisplayStyle}>
+                <form onSubmit={handelSubmit}  className='places-to-stay-form'>
                     <div className='form-element'>
                         <label htmlFor='location'>Location</label>
                         <input
@@ -157,9 +157,9 @@ export default function NavbarPlacesToStay(props) {
                     </div>
                     <div className='separator-line'></div>
                     <div className='form-flex-element'>
-                        <div className='form-element-guests'>
-                        <p className='label' onClick={handleDisplayGuestsContainer}>Guests</p>
-                        <p className='data'>{formData.guests === 0 ? "Add guests" : formData.guests}</p>
+                        <div className='form-element-guests'  onClick={handleDisplayGuestsContainer}>
+                        <h3 className='label'>Guests</h3>
+                        <h3 className='data'>{formData.guests === 0 ? "Add guests" : formData.guests}</h3>
                      
                         </div>
                        
@@ -177,6 +177,8 @@ export default function NavbarPlacesToStay(props) {
            
              
           </div>
+                </div>
+              
         </div>
 
 

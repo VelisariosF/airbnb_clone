@@ -5,7 +5,7 @@ import ProfileModerator from "./NavbarComponents/ProfileModerator"
 import logo_white from './images/airbnb_logo_white.png'
 import logo from './images/airbnb_logo.png'
 export default function Navbar() {
-    const [displayPlacesToStayForm, setDisplayPlacesToStayForm] = React.useState (()=>true)
+    const [displayPlacesToStayForm, setDisplayPlacesToStayForm] = React.useState (()=>false)
     const [displayExperiencesForm, setdisplayExperiencesForm] = React.useState(() =>false)
     const [logoState, setLogoState] = React.useState(logo_white)
     const [profileModeratorDisplay, setProfileModeratorDisplay] = React.useState(() => false)
@@ -25,7 +25,7 @@ export default function Navbar() {
 
     return (
         <nav className='main-nav'>
-            <img src={logoState} className='logo' alt='logo'></img>
+            <img src={logoState} className='logo' alt='logo'/>
             <ul className='search-ul'>
                 <li className='places-to-stay' style={{cursor:'pointer'}} onClick={() => handleFormsDisplay(1)}>
                     <NavbarPlacesToStay id={1} show={displayPlacesToStayForm} />
@@ -42,7 +42,7 @@ export default function Navbar() {
                 <li>Become a host</li>
                 <li>lng</li>
                 <li className ='profile-moderator'>
-                    <button className='profile-moderator-button' onClick={() => handleFormsDisplay(3)}><i style={{fontSize: '1.3em'}} className="fa fa-bars"></i><i  style={{color: 'grey'}}className="fa fa-user-circle" aria-hidden="true"></i></button>
+                    <button className='profile-moderator-button' onClick={() => handleFormsDisplay(3)}><i style={{fontSize: '1em'}} className="fa fa-bars"></i><i  style={{color: 'grey'}}className="fa fa-user-circle" aria-hidden="true"></i></button>
                     <ProfileModerator display={profileModeratorDisplay} />
                 </li>
             </ul>

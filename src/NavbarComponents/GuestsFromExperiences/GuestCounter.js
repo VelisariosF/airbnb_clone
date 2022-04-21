@@ -7,14 +7,14 @@ export default function GuestCounter(props){
      
           <div className='counter-element'>
               <div className='description-container'>
-                  <p>Adults</p>
+                  <p><strong>Adults</strong></p>
                    <p>Ages 13 or above</p>
                 
               </div>
               <div className='counter'>
-                  <button onClick={props.subtract}>-</button>
+                  <button onClick={props.subtract}><i class="fa fa-minus" aria-hidden="true"></i></button>
                   <p>{props.value}</p>
-                  <button onClick={props.add}>+</button>
+                  <button onClick={props.add}><i class="fa fa-plus" aria-hidden="true"></i></button>
               </div>
           </div>
        

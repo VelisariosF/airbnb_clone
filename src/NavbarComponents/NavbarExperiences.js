@@ -1,5 +1,5 @@
 import React from 'react'
-import './NavbarExperiences.css'
+import './NavbarPlacesToStay.css'
 import '../Navbar.css'
 export default function NavbarExperiences(props) {
   const formDisplayStyle = {
